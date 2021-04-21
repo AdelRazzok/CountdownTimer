@@ -1,0 +1,115 @@
+/***** OVERALL *****/
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text&display=swap');
+
+body {
+    background-color: hsl(234, 17%, 12%);
+    background-image: url("../../images/bg-stars.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: 'Red Hat Text', sans-serif;
+}
+
+/***** BODY PLACEMENT *****/
+
+body .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body .container h1 {
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.5em;
+    margin-bottom: 10%;
+}
+body .container .timerContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+}
+body .container .timerContainer .cnt {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body .container .timerContainer .cnt p {
+    color: hsl(237, 18%, 59%);
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-top: 2em;
+}
+
+/***** CARDS *****/
+
+.cardContainer {
+    perspective: 1000px;
+    position: relative;
+}
+.tCard, .bCard {
+    color: hsl(345, 95%, 68%);
+    font-weight: bold;
+    font-size: 4em;
+    
+    box-shadow: 10px 10px 10px black;
+
+    height: 75px;
+
+    overflow: hidden;
+    /*position: ;*/
+
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    transform-origin: bottom;
+}
+.tCard {
+    background-color: hsl(236, 21%, 26%);
+    border-radius: 10px 10px 0px 0px;
+}
+.bCard {
+    background-color: hsl(236, 21%, 30%);
+    border-radius: 0px 0px 10px 10px;
+}
+#cntDownDays {
+    position: absolute;
+    bottom: 0;
+    transform: translate(0, -50%);
+}
+ #cntDownDaysFlip {
+    position: absolute;
+    top: 0;
+    transform: translate(0, 50%);
+}
+.flip {
+    transform: rotateX(-180deg);
+}
+
+/***** FOOTER *****/
+
+footer {
+    background-image: url("../../images/pattern-hills.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 25%;
+    position: absolute;	
+    bottom: 0;
+    left:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a {
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+}
+svg {
+    fill: #8385A9;
+    transform: scale(1.2);
+}
+svg:hover {
+    fill: hsl(345, 95%, 68%);
+}
