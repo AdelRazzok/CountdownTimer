@@ -1,11 +1,22 @@
-var deadLine = new Date("April 23, 2021 17:00:00").getTime();
-
-/*console.log(deadLine);*/
+/*
+console.log(deadLine);
 
 var card = document.getElementById('tCard');
 card.addEventListener("click", () => {
     card.classList.toggle('flip');
 }, false);
+*/
+
+var deadLine = new Date("April 25, 2021 18:00:00").getTime();
+
+var daysCard = document.getElementById('cntDownDays');
+var hoursCard = document.getElementById('cntDownHours');
+var minCard = document.getElementById('cntDownMin');
+var secCard = document.getElementById('cntDownSec');
+
+var newTopCardContainer = document.getElementById('newTopCardContainer');
+var newTopCard = document.getElementById('newTopCard');
+var newCard = document.getElementById('newCard');
 
 var x = setInterval(function() {
 
@@ -30,10 +41,21 @@ var x = setInterval(function() {
         days = "0" + days;
     }
 
-    document.getElementById('cntDownDays').innerHTML = days;
-    document.getElementById('cntDownHours').innerHTML = hours;
-    document.getElementById('cntDownMin').innerHTML = minutes;
-    document.getElementById('cntDownSec').innerHTML = seconds;
+    daysCard.innerHTML = days;
+    document.getElementById('cntDownDaysFlip').innerHTML = days;
+
+    hoursCard.innerHTML = hours;
+    document.getElementById('cntDownHoursFlip').innerHTML = hours
+
+    minCard.innerHTML = minutes;
+    document.getElementById('cntDownMinFlip').innerHTML = minutes;
+    
+    secCard.innerHTML = seconds;
+    document.getElementById('cntDownSecFlip').innerHTML = seconds;
+
+    newTopCardContainer.addEventListener("click", () => {
+        newTopCardContainer.classList.toggle('flip');
+    }, false);
 
     if (distance < 0) {
         clearInterval(x);
