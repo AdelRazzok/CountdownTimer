@@ -1,64 +1,70 @@
-/*
-console.log(deadLine);
+const daysNumber = document.getElementById('top-days-number');
+const botDaysNumber = document.getElementById('bot-days-number')
 
-var card = document.getElementById('tCard');
-card.addEventListener("click", () => {
-    card.classList.toggle('flip');
-}, false);
-*/
+const hoursNumber = document.getElementById('top-hours-number');
+const botHoursNumber = document.getElementById('bot-hours-number');
 
-var deadLine = new Date("April 25, 2021 18:00:00").getTime();
+const minutesNumber = document.getElementById('top-minutes-number');
+const botMinutesNumber = document.getElementById('bot-minutes-number');
 
-var daysCard = document.getElementById('cntDownDays');
-var hoursCard = document.getElementById('cntDownHours');
-var minCard = document.getElementById('cntDownMin');
-var secCard = document.getElementById('cntDownSec');
+const secondsNumber = document.getElementById('top-seconds-number');
+const newSecondsNumber = document.getElementById('new-top-seconds-number'); 
+const newSecondsNumberBack = document.getElementById('new-top-back-seconds-number');
+const botSecondsNumber = document.getElementById('bot-seconds-number');
 
-var newTopCardContainer = document.getElementById('newTopCardContainer');
-var newTopCard = document.getElementById('newTopCard');
-var newCard = document.getElementById('newCard');
+var countDownDate = new Date("September 26, 2021 23:59:59").getTime();
 
-var x = setInterval(function() {
+var x = setInterval(function () {
 
     var now = new Date().getTime();
-    var distance = deadLine - now;
+
+    var distance = countDownDate - now;
 
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    if (seconds < 10) {
-        seconds = "0" + seconds;
-    }
-    if (minutes < 10) {
-        minutes = "0" + minutes;
-    }
-    if (hours < 10) {
-        hours = "0" + hours;
-    }
+    /* JOURS */
+    daysNumber.innerHTML = days;
+    botDaysNumber.innerHTML = days;
+
     if (days < 10) {
-        days = "0" + days;
+        daysNumber.innerHTML = "0" + days;
+        botDaysNumber.innerHTML = "0" + days;
     }
 
-    daysCard.innerHTML = days;
-    document.getElementById('cntDownDaysFlip').innerHTML = days;
-
-    hoursCard.innerHTML = hours;
-    document.getElementById('cntDownHoursFlip').innerHTML = hours
-
-    minCard.innerHTML = minutes;
-    document.getElementById('cntDownMinFlip').innerHTML = minutes;
+    /* HEURES */
+    hoursNumber.innerHTML = hours;
+    botHoursNumber.innerHTML = hours;
     
-    secCard.innerHTML = seconds;
-    document.getElementById('cntDownSecFlip').innerHTML = seconds;
-
-    newTopCardContainer.addEventListener("click", () => {
-        newTopCardContainer.classList.toggle('flip');
-    }, false);
-
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById('cntDown').innerHTML = "Terminé !";
+    if (hours < 10) {
+        hoursNumber.innerHTML = "0" + hours;
+        botHoursNumber.innerHTML = "0" + hours;
     }
+
+    /* MINUTES */
+    minutesNumber.innerHTML = minutes;
+    botMinutesNumber.innerHTML = minutes;
+
+    if (minutes < 10) {
+        minutesNumber.innerHTML = "0" + minutes;
+        botMinutesNumber.innerHTML = "0" + minutes;
+    }
+
+    /* SECONDES */
+    secondsNumber.innerHTML = seconds;
+    newSecondsNumber.innerHTML = seconds;
+    newSecondsNumberBack.innerHTML = seconds;
+    botSecondsNumber.innerHTML = seconds;
+
+    if (seconds < 10) {
+        secondsNumber.innerHTML = "0" + seconds;
+        newSecondsNumber.innerHTML = "0" + seconds;
+        newSecondsNumberBack.innerHTML = "0" + seconds;
+        botSecondsNumber.innerHTML = "0" + seconds;
+    }
+
+    
+
 }, 1000);

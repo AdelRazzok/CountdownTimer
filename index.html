@@ -1,104 +1,82 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
 	<link rel="stylesheet" href="assets/css/style.css">
-	<title>Countdown Timer</title>
+	<title>Décompte</title>
 </head>
+
 <body>
 	<div class="container">
 		<div class="title">
 			<h2>On commence bientôt :</h2>
 		</div>
 
-		<div class="countdown-clock" id="countdown-clock">
-			<!-- BODY - JOURS -->
+		<div id="countdown-clock" class="countdown-clock">
+
+			<!-- JOURS -->
 			<div class="countdown days">
 				<div class="countdown-card">
-					<div class="card-top" id="card-top">
-						<span id="days-number">00</span>
+					<div id="card-top" class="card-top">
+						<span id="top-days-number">00</span>
 					</div>
-					<div class="card-bot" id="card-bot">
-						<span id="days-number">00</span>
-					</div>
-				</div>
-				<div class="flip-card">
-					<div class="flip-card-top" id="flip-card-top-days">
-						<span id="flip-days-number">00</span>
-					</div>
-					<div class="flip-card-bot" id="flip-card-bot-days">
-						<span id="flip-days-number">00</span>
+					<div id="card-bottom" class="card-bottom">
+						<span id="bot-days-number">00</span>
 					</div>
 				</div>
-				<p>Jours</p>
+				<p>jours</p>
 			</div>
 
-			<!-- BODY - HEURES -->
+			<!-- HEURES -->
 			<div class="countdown hours">
 				<div class="countdown-card">
-					<div class="card-top" id="card-top">
-						<span id="days-hours">00</span>
+					<div id="card-top" class="card-top">
+						<span id="top-hours-number">00</span>
 					</div>
-					<div class="card-bot" id="card-bot">
-						<span id="days-hours">00</span>
-					</div>
-				</div>
-				<div class="flip-card">
-					<div class="flip-card-top" id="flip-card-top-hours">
-						<span id="flip-days-hours">00</span>
-					</div>
-					<div class="flip-card-bot" id="flip-card-bot-hours">
-						<span id="flip-days-hours">00</span>
+					<div id="card-bottom" class="card-bottom">
+						<span id="bot-hours-number">00</span>
 					</div>
 				</div>
-				<p>Heures</p>
+				<p>heures</p>
 			</div>
 
-			<!-- BODY - MINUTES -->
-			<div class="countdown min">
+			<!-- MINUTES -->
+			<div class="countdown minutes">
 				<div class="countdown-card">
-					<div class="card-top" id="card-top">
-						<span id="days-min">00</span>
+					<div id="card-top" class="card-top">
+						<span id="top-minutes-number">00</span>
 					</div>
-					<div class="card-bot" id="card-bot">
-						<span id="days-min">00</span>
-					</div>
-				</div>
-				<div class="flip-card">
-					<div class="flip-card-top" id="flip-card-top-min">
-						<span id="flip-days-min">00</span>
-					</div>
-					<div class="flip-card-bot" id="flip-card-bot-min">
-						<span id="flip-days-min">00</span>
+					<div id="card-bottom" class="card-bottom">
+						<span id="bot-minutes-number">00</span>
 					</div>
 				</div>
-				<p>Minutes</p>
+				<p>minutes</p>
 			</div>
 
-			<!-- BODY - SECONDES -->
-			<div class="countdown sec">
+			<!-- SECONDES -->
+			<div class="countdown seconds">
 				<div class="countdown-card">
-					<div class="card-top" id="card-top">
-						<span id="days-sec">00</span>
+					<div id="card-top" class="card-top">
+						<span id="top-seconds-number">00</span>
 					</div>
-					<div class="card-bot" id="card-bot">
-						<span id="days-sec">00</span>
+					<div id="new-card-top" class="anime">
+						<div class="card-top card-top-front">
+							<span id="new-top-seconds-number">00</span>
+						</div>
+						<div class="card-top card-top-back">
+							<span id="new-top-back-seconds-number">00</span>
+						</div>
+					</div>
+					<div id="card-bottom" class="card-bottom">
+						<span id="bot-seconds-number">00</span>
 					</div>
 				</div>
-				<div class="flip-card">
-					<div class="flip-card-top" id="flip-card-top-min">
-						<span id="flip-days-sec">00</span>
-					</div>
-					<div class="flip-card-bot" id="flip-card-bot-min">
-						<span id="flip-days-sec">00</span>
-					</div>
-				</div>
-				<p>Secondes</p>
+				<p>secondes</p>
 			</div>
-		</div>	
+		</div>
 
 		<footer>
 			<div class="social">
